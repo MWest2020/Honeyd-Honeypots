@@ -1,11 +1,35 @@
-# Honeypots
-Repo for configs etc for sharing with fellow students
+# OpenCanary Honeypot 
 
-# Installation of OpenCanary
+## Installation of OpenCanary
 
+I recommend these steps for installation in a Virtualbox kali-linux.
 
+Create a virtual environment (optional):
 
+```
+virtualenv env
+source env/bin/activate  # On Windows, use `env\Scripts\activate` instead
+```
 
+## Verify the rights of the directory 
+
+Verify the permissions on the directory mentioned in the error message. You should have `write` permissions to this directory.
+
+```bash
+ls -ld /home/kali/env/lib/python3.11/site-packages
+```
+The output will show the permissions and the owner of the directory. Ensure that your user has the necessary permissions. It should look like `drwxr-xr-x`
+
+## actual installation
+
+use `pip` to install OpenCanary.
+
+```python
+$ pip install opencanary
+```
+
+If all is well, you should be able to run opencanary! Change the directory to `/env/bin/` and before you run opencanary the first time, run the `./opencanaryd --copyconfig` to set up a necessary `.conf` file. 
+It will be stored in the `/etc/opencanaryd/` directory, but you can choose to keep it in your installation directory or `~/`. Open Canary will look in all three and chooses the first configuration file it finds. 
 
 ## `opencanary.conf`
 
